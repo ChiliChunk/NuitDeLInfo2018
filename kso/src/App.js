@@ -23,6 +23,9 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
+import PositionIcon from '@material-ui/icons/PersonPinCircle';
+
+
 import MailIcon from '@material-ui/icons/Mail';
 
 import { Provider } from 'react-redux'
@@ -118,7 +121,7 @@ class MiniDrawer extends React.Component {
         )
       case 2 :
         return(
-          <h1>Materiel</h1>
+          <Materiel/>
         )
       case 3 :
         return(
@@ -139,6 +142,9 @@ class MiniDrawer extends React.Component {
   }
 
   async choicePage(index){
+    if (index === 5){
+      await this.setState({indexChoosen : -1})
+    }
     await this.setState({indexChoosen : index})
   }
 
@@ -192,13 +198,14 @@ class MiniDrawer extends React.Component {
           </div>
           <Divider />
           <List>
-            {['Environnement', 'Alerte', 'Materiel', 'Meteo' , 'Itineraires'].map((text, index) => (
+            {['Environnement', 'Alerte', 'Materiel', 'Meteo' , 'Itineraires' , 'Position'].map((text, index) => (
               <ListItem button key={text} onClick={() => this.choicePage(index)}>
                 <ListItemIcon>{index === 0 ? <EnvironnementIcon /> :
                               index === 1 ? <AlertIcon /> :
                               index === 2 ? <MaterielIcon/>:
                               index === 3 ? <MeteoIcon/>:
-                              <MapIcon/>}</ListItemIcon>
+                              index === 4 ? <MapIcon/>: <PositionIcon/>
+                              }</ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
             ))}

@@ -2,10 +2,6 @@ import React, {Component} from "react";
 import L from "leaflet"
 import '../Map.css';
 
-var lat = 48.852969;
-var lon = 2.349903;
-var macarte = null;
-
 class Maps extends Component {
 
   displayCurrentLocation(){
@@ -19,6 +15,8 @@ class Maps extends Component {
 
   initMap() {
 
+    var macarte = null;
+    
     if (navigator.geolocation) {
 
         navigator.geolocation.getCurrentPosition((function (position) {
