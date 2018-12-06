@@ -28,6 +28,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import { Provider } from 'react-redux'
 import configureStore from './store/configureStore';
 import Materiel from './components/Materiel'
+import Maps from './components/Maps'
 
 const drawerWidth = 240;
 
@@ -105,7 +106,7 @@ class MiniDrawer extends React.Component {
     switch(this.state.indexChoosen){
       case -1 :
         return(
-          <h1>Map</h1>
+          <Maps/>
         )
       case 0 :
         return(
@@ -138,7 +139,6 @@ class MiniDrawer extends React.Component {
   }
 
   async choicePage(index){
-    console.log(index)
     await this.setState({indexChoosen : index})
   }
 
