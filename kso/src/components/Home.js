@@ -1,4 +1,7 @@
 import React from 'react';
+import * as MaterielAction from '../action/MaterielActions'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
@@ -24,12 +27,6 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-
-import { Provider } from 'react-redux'
-import configureStore from './store/configureStore';
-import Materiel from './components/Materiel'
-
-const drawerWidth = 240;
 
 const styles = theme => ({
   root: {
@@ -93,42 +90,15 @@ const styles = theme => ({
   },
 });
 
-class MiniDrawer extends React.Component {
+const drawerWidth = 240;
+
+
+class Home extends React.Component {
+  
   state = {
     open: false,
-    indexChoosen : -1
   }
 
-
-  //['Environnement', 'Alerte', 'Materiel', 'Meteo' , 'Itineraires']
-  renderPage(){
-    switch(this.state.indexChoosen){
-      case -1 :
-        return(
-          <h1>Map</h1>
-        )
-      case 0 :
-        return(
-          <h1>Environnement</h1>
-        )
-      case 1 :
-        return(
-          <h1>Alerte</h1>
-        )
-      case 2 :
-        return(
-          <h1>Materiel</h1>
-        )
-      case 3 :
-        return(
-          <h1>Meteo</h1>
-        )
-      case 4 :
-        return(
-          <h1>Itineraires</h1>
-        )
-    }
-  }
   handleDrawerOpen = () => {
     this.setState({ open: true });
   }
@@ -137,16 +107,14 @@ class MiniDrawer extends React.Component {
     this.setState({ open: false });
   }
 
-  async choicePage(index){
-    console.log(index)
-    await this.setState({indexChoosen : index})
+  componentDidMount(){
+    console.log(this.props)
   }
 
   render() {
     const { classes, theme } = this.props;
 
     return (
-      <Provider store={configureStore()}>
       <div className={classes.root}>
         <CssBaseline />
         <AppBar
@@ -211,17 +179,25 @@ class MiniDrawer extends React.Component {
         </Drawer>
         <main className={classes.content}>
           <div className={classes.toolbar} />
-          {this.renderPage()}
+
         </main>
       </div>
-      </Provider>
     );
   }
 }
 
-MiniDrawer.propTypes = {
-  classes: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired,
-};
 
-export default withStyles(styles, { withTheme: true })(MiniDrawer);
+
+function mapStateToProps (state) {
+  return {
+    store : state.appReducer
+  }
+}
+
+function mapDispatchToProps (dispatch) {
+  return {
+    MaterielAction: bindActionCreators(MaterielAction, dispatch),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)
