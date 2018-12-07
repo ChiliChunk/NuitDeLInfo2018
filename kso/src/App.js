@@ -152,9 +152,11 @@ class MiniDrawer extends React.Component {
 
   async choicePage(index){
     if (index === 5){
-      alert('Nope')
+      await this.setState({indexChoosen : -1})
     }
-    await this.setState({indexChoosen : index})
+    else{
+      await this.setState({indexChoosen : index})
+    }
   }
 
   render() {
