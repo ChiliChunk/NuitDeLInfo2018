@@ -11,8 +11,6 @@ import Paper from '@material-ui/core/Paper';
 
 class Materiels extends React.Component {
   componentDidMount(){
-    console.log(this.props)
-    console.log(matos)
     this.createMainList()
   }
 
@@ -42,7 +40,6 @@ class Materiels extends React.Component {
       })
       this.props.store.choosenMainObject.splice(goodindex,1)
     }
-    console.log(this.props.store.choosenMainObject)
     this.forceUpdate()
   }
 
@@ -65,7 +62,15 @@ class Materiels extends React.Component {
 
     const dependencies = this.props.store.choosenMainObject.map((item)=>{
       return(
-        <li key={item.id}>{item.dependencies}</li>
+        <Paper style={{margin : '10px'}} key={item.id}>
+          <ul>
+        {item.dependencies.map( (content , forKey)=>{
+          return(
+            <li key={forKey}> {content}</li>
+          )
+        })}
+          </ul>
+        </Paper>
       )
     })
     return (
