@@ -15,9 +15,11 @@ class Materiels extends React.Component {
   }
 
   createMainList(){
-    matos.map((item , index) => {
-      this.props.store.allMainObject.push(item)
-    })
+    if (this.props.store.allMainObject.length === 0){
+      matos.map((item , index) => {
+        this.props.store.allMainObject.push(item)
+      })
+    }
     this.forceUpdate()
   }
 
@@ -77,6 +79,7 @@ class Materiels extends React.Component {
       <div>
         <h1>Gestion de la liste de materiel</h1>
         {main}
+
         <ul>
         {dependencies}
         </ul>

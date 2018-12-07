@@ -32,6 +32,7 @@ import { Provider } from 'react-redux'
 import configureStore from './store/configureStore';
 import Materiel from './components/Materiel'
 import Maps from './components/Maps'
+import Alerte from './components/Alerte'
 
 const drawerWidth = 240;
 
@@ -100,7 +101,7 @@ const styles = theme => ({
 class MiniDrawer extends React.Component {
   state = {
     open: false,
-    indexChoosen : 2
+    indexChoosen : -1
   }
 
 
@@ -117,7 +118,7 @@ class MiniDrawer extends React.Component {
         )
       case 1 :
         return(
-          <h1>Alerte</h1>
+          <Alerte/>
         )
       case 2 :
         return(
