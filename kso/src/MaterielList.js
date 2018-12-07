@@ -1,6 +1,6 @@
 export default
   [
-    {
+    {'id' : "eererere",
     'Main' : 'Camera Red de ouf',
     'dependencies' : [
       'Batterie',
@@ -8,6 +8,7 @@ export default
       'Cable2']
     },
     {
+    'id' : 'sfsfsesefsefsdfsdfs',
     'Main' : 'Appareil Photo',
     'dependencies' : [
       'Batterie',

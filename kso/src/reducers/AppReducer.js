@@ -1,5 +1,7 @@
 const initialState =  {
-  test : []
+  allMainObject : [],
+  choosenMainObject : [],
+  dependencies:[]
 }
 
 export default function appReducer (state = initialState, action) {

@@ -100,7 +100,7 @@ const styles = theme => ({
 class MiniDrawer extends React.Component {
   state = {
     open: false,
-    indexChoosen : -1
+    indexChoosen : 2
   }
 
 
