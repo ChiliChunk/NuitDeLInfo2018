@@ -10,7 +10,7 @@ class Environnement extends React.Component {
   render(){
     return(
       <div>
-      <h1>Guide de surive dans le desert</h1>
+      <h1>Guide de survie dans le desert</h1>
       <p>Lorsqu'à la suite d'un accident (voiture ensablée par exemple) on se trouve amené à continuer la route à pied, tout déplacement doit être mûrement réfléchi. En cas d'immobilisation d'un véhicule, il est recommandé de rester sur place, et de lancer des signaux de détresse : de jour, utiliser un miroir de signalisation, ou faire brûler des pneus (dans le désert, la fumée se voit de loin), et de nuit, démonter les phares et les braquer vers le ciel.
 Si on décide malgré tout de continuer à pied, il est plus prudent de revenir sur ses traces plutôt que de couper. En période de lune, il vaut mieux marcher de nuit et se reposer le jour. En effet la pleine lune offre un très bon éclairage du fait de la pureté de l'air et de l'absence de nuages, et les yeux ne se fatiguent pas comme dans la journée. Lorsqu'il n'y a pas de lune, la meilleure solution consiste à éviter la marche de nuit, car on risque de se perdre beaucoup plus facilement, et de faire route au plus tard jusqu'à 10 ou 11 heures le matin, et pas avant 16 heures le soir. Autant que possible, marcher sur du dur plutôt que sur du sable, et contourner les dunes plutôt que les escalader, pour éviter de casser son rythme de marche.
 
