@@ -23,6 +23,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import TableFooter from '@material-ui/core/TableFooter';
+import Meteo from './components/meteo';
 
 const drawerWidth = 240;
 
@@ -193,7 +195,9 @@ class MiniDrawer extends React.Component {
             viverra maecenas accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam
             ultrices sagittis orci a.
           </Typography>
+          <Meteo />
         </main>
+        <TableFooter/>
       </div>
     );
   }
