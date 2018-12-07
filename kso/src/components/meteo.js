@@ -8,6 +8,7 @@ import MeteoRenderer from './MeteoRenderer'
 class Meteo extends React.Component {
 
   componentDidMount(){
+    console.log(this.props)
     this.setState({
       isLoaded : false
     })
@@ -15,7 +16,9 @@ class Meteo extends React.Component {
   }
 
   getMeteo() {
-      let url = "https://openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=b6907d289e10d714a6e88b30761fae22"
+      let localLat = Math.round(this.props.store.coords[0].lat)
+      let localLon = Math.round(this.props.store.coords[0].latlon)
+      let url = "https://openweathermap.org/data/2.5/weather?lat=" + localLat+"&lon="+localLon+"&appid=b6907d289e10d714a6e88b30761fae22"
       axios.get(url)
       .then(response =>{
         this.props.store.meteoNow.push(response.data)

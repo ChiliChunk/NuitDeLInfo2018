@@ -3,7 +3,8 @@ const initialState =  {
   choosenMainObject : [],
   dependencies:[],
   meteoNow:[],
-  meteoLater : []
+  meteoLater : [],
+  coords: []
 }
 
 export default function appReducer (state = initialState, action) {
