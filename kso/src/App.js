@@ -34,6 +34,7 @@ import { Provider } from 'react-redux'
 import configureStore from './store/configureStore';
 import Materiel from './components/Materiel'
 import Maps from './components/Maps'
+import About from './components/About'
 import Alerte from './components/Alerte'
 
 const drawerWidth = 240;
@@ -134,6 +135,10 @@ class MiniDrawer extends React.Component {
         return(
           <h1>Itineraires</h1>
         )
+      case 6 :
+        return(
+          <About/>
+        )
     }
   }
   handleDrawerOpen = () => {
@@ -214,7 +219,7 @@ class MiniDrawer extends React.Component {
             ))}
           </List>
           <Divider />
-          <ListItem button key="A propos">
+          <ListItem button key="A propos" onClick={() => this.choicePage(6)}>
             <ListItemIcon><AboutIcon/></ListItemIcon>
             <ListItemText primary="A propos"/>
           </ListItem>

@@ -14,7 +14,7 @@ class Alerte extends React.Component {
       <div>
         <TextField
           id="outlined-multiline-static"
-          label="Demander de l'aide"
+          label="Signaler Quelquechose"
           multiline
           rows="10"
           margin="normal"
@@ -22,7 +22,7 @@ class Alerte extends React.Component {
         />
         <br/>
         <Button variant="contained" >
-          SOS
+          Envoyer
         </Button>
       </div>
     )

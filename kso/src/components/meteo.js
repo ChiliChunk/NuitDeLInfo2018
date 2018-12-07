@@ -5,6 +5,8 @@ import * as MaterielAction from '../action/MaterielActions'
 import React from 'react';
 import axios from 'axios';
 import MeteoRenderer from './MeteoRenderer'
+
+
 class Meteo extends React.Component {
 
   componentDidMount(){
