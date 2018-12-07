@@ -5,6 +5,7 @@ import * as MaterielAction from '../action/MaterielActions'
 import matos from '../MaterielList'
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Paper from '@material-ui/core/Paper';
 
 
 
@@ -22,29 +23,27 @@ class Materiels extends React.Component {
     this.forceUpdate()
   }
 
-  updateChooseObject(e , index){
+  updateChooseObject(e , index){ //DEGUEULASSE AF MAIS ON A PAS LE TEMPS
     let estPresent = false
     this.props.store.choosenMainObject.map((item) =>{
-      console.log(item)
       if (item.id === this.props.store.allMainObject[index].id){
         estPresent = true
       }
     })
-    if(!estPresent){
-      console.log('c est pas present')
+    if(!estPresent){ // ON RAJOUTE
       this.props.store.choosenMainObject.push(this.props.store.allMainObject[index])
     }
-    else{
+    else{ // ON ENLEVE
       let goodindex = -1
       this.props.store.choosenMainObject.map((item,index2) =>{
         if(item.id ===this.props.store.allMainObject[index].id){
           goodindex = index2
         }
       })
-      console.log(goodindex)
       this.props.store.choosenMainObject.splice(goodindex,1)
     }
     console.log(this.props.store.choosenMainObject)
+    this.forceUpdate()
   }
 
 
@@ -63,12 +62,18 @@ class Materiels extends React.Component {
         </div>
       )
     })
+
+    const dependencies = this.props.store.choosenMainObject.map((item)=>{
+      return(
+        <li key={item.id}>{item.dependencies}</li>
+      )
+    })
     return (
       <div>
         <h1>Gestion de la liste de materiel</h1>
         {main}
         <ul>
-
+        {dependencies}
         </ul>
       </div>
     )
