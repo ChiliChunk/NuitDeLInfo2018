@@ -12,6 +12,7 @@ class Alerte extends React.Component {
   render(){
     return(
       <div>
+        <p>Message associé a vos coordonnées GPS<br/> Latitude :{this.props.store.coords[0].lat} Longitude : {this.props.store.coords[0].lon}</p>
         <TextField
           id="outlined-multiline-static"
           label="Signaler Quelquechose"

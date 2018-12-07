@@ -35,6 +35,7 @@ import configureStore from './store/configureStore';
 import Materiel from './components/Materiel'
 import Maps from './components/Maps'
 import About from './components/About'
+import Environnement from './components/Environement'
 import Alerte from './components/Alerte'
 
 const drawerWidth = 240;
@@ -117,7 +118,7 @@ class MiniDrawer extends React.Component {
         )
       case 0 :
         return(
-          <h1>Environnement</h1>
+          <Environnement/>
         )
       case 1 :
         return(

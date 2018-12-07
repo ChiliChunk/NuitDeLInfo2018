@@ -79,7 +79,7 @@ class Materiels extends React.Component {
       <div>
         <h1>Gestion de la liste de materiel</h1>
         {main}
-
+        {this.props.store.choosenMainObject.length === 0 ? '' : 'Ne pas oublier'}
         <ul>
         {dependencies}
         </ul>
