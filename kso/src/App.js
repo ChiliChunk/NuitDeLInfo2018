@@ -27,6 +27,8 @@ import PositionIcon from '@material-ui/icons/PersonPinCircle';
 
 
 import MailIcon from '@material-ui/icons/Mail';
+import TableFooter from '@material-ui/core/TableFooter';
+import Meteo from './components/meteo';
 
 import { Provider } from 'react-redux'
 import configureStore from './store/configureStore';
@@ -126,7 +128,7 @@ class MiniDrawer extends React.Component {
         )
       case 3 :
         return(
-          <h1>Meteo</h1>
+          <Meteo/>
         )
       case 4 :
         return(
@@ -221,6 +223,7 @@ class MiniDrawer extends React.Component {
           <div className={classes.toolbar} />
           {this.renderPage()}
         </main>
+        <TableFooter/>
       </div>
       </Provider>
     );

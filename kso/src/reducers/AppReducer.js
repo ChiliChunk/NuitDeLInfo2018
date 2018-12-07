@@ -1,7 +1,9 @@
 const initialState =  {
   allMainObject : [],
   choosenMainObject : [],
-  dependencies:[]
+  dependencies:[],
+  meteoNow:[],
+  meteoLater : []
 }
 
 export default function appReducer (state = initialState, action) {
